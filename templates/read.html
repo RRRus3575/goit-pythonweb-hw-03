@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Messages</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>All Messages</h1>
+    <ul>
+      {% for timestamp, message in messages.items() %}
+      <li>
+        <strong>{{ message.username }}</strong>: {{ message.message }}
+        <em>({{ timestamp }})</em>
+      </li>
+      {% else %}
+      <li>No messages found.</li>
+      {% endfor %}
+    </ul>
+    <p><a href="/">Back to Home</a></p>
+  </body>
+</html>
